@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>5.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///r%3A/2.Travail/1.Enseignement/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css"><link rel="stylesheet" href="file:///d%3A/rdaros/Cours/_1.Outils/2.Developpement/1.SCSS/main.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="by-gpt">By gpt</h1>
+<p>Việt Nam được xem như một quốc gia nhiệt đới gió mùa ẩm vì các yếu tố tự nhiên của nó đã tạo ra một khí hậu đặc biệt. Khí hậu này được thể hiện bởi sự kết hợp của nhiều thành phần tự nhiên, nhưng tập trung nhất là trong khí hậu nóng ẩm.</p>
+<p>Tại Việt Nam, nhiệt độ trung bình vào mùa hè thường dao động từ 30 đến 35 độ C và qúa trình lượng mưa hàng năm rất lớn, vì vậy đất nước xứng đáng được gọi là nhiệt đới gió mùa ẩm.</p>
+<p>Thành phần tự nhiên của Việt Nam như địa hình đa dạng, sông ngòi phong phú, đồng bằng, rừng nhiệt đới phân bố rộng khắp đã tạo ra môi trường sống trong đó các hiện tượng tự nhiên phát triển mạnh mẽ. Bức xạ mặt trời ở đây rất lớn, tạo ra lượng nhiệt cực kỳ dồi dào cho đất nước, đồng thời cũng tạo nên quanh năm, sự chuyển đổi giữa hai mùa khô và mưa với sự ảnh hưởng của gió mùa.</p>
+<p>Tóm lại, Việt Nam được xem như một quốc gia nhiệt đới gió mùa ẩm vì các yếu tố tự nhiên, đặc biệt là khí hậu nóng ẩm, đã tác động lên nhau để tạo ra trạng thái khí hậu đặc biệt của đất nước.</p>
+<h1 id="by-any">by Any</h1>
+<p>Khí hậu nước ta mang tính chất nhiệt đới gió mùa ẩm, thể hiện:</p>
+<ul>
+<li>Tinh chất nhiệt đới</li>
+</ul>
+<ul>
+<li>Nhiệt độ trung bình cao trên 21°C + Số giờ nắng trong năm từ 1400 - 3000 giờ/năm</li>
+<li>Mặt đất tiếp nhận một lượng nhiệt lớn 1 triệu kilocalo/m2/năm</li>
+</ul>
+<ul>
+<li>Tinh chất gió mùa</li>
+</ul>
+<ul>
+<li>Khí hậu nước ta chia thành hai mua rõ rệt, phù hợp với hai mùa gió</li>
+</ul>
+<ul>
+<li>Mùa đông lạnh và khô tương ứng với gió mùa Đông Bắc</li>
+<li>Mùa hạ nóng và ẩm tương ứng với gió mùa Tây Nam</li>
+</ul>
+<ul>
+<li>Tinh chất ẩm</li>
+</ul>
+<ul>
+<li>Lượng mưa lớn từ 1500 --&gt; 2000mm/năm</li>
+<li>Độ ẩm không khí cao trên 80% Ảnh hưởng</li>
+</ul>
+<ul>
+<li>Đối với tự nhiên:</li>
+</ul>
+<ul>
+<li>Địa hình: bị bào mòn, cắt xẻ, xâm thực mạnh (địa hình caxtơ)</li>
+<li>Sông ngòi:</li>
+</ul>
+<ul>
+<li>Mạng lưới sông ngòi dày đặc, sông nhiều nước, không đóng băng, lượng nước nhiều * Chế độ nước phân theo mùa: mùa mưa và mùa khô</li>
+<li>Hàm lượng phù sa lớn + Sinh vật:</li>
+<li>Phong phú và đa dạng, có cả ôn đới, nhiệt đới, cận nhiệt đới</li>
+<li>Có nhiều kiểu sinh thái, trong đó hệ sinh thái tự nhiên nhiệt đới ẩm chiếm ưu thế</li>
+</ul>
+<ul>
+<li>Dát:</li>
+</ul>
+<ul>
+<li>Chủ yếu là đất feralit ở khu vực đồi núi, còn ở đồng bằng là đất phù sa</li>
+<li>Độ dày lớp đất phụ thuộc vào lớp dày nếu có thực vật che phủ --&gt; Kết luận: Với khí hậu nhiệt đới gió mùa ẩm đã tạo cho sự tự nhiên nước ta phong phú, đa dạng, có sự phân hoá theo không gian và thời gian, có những nét độc đáo, khác với<br>
+những nơi cùng vĩ độ - Đối với kinh tế<br>
+Thuận lợi</li>
+</ul>
+<ul>
+<li>Nông nghiệp: Làm cho sinh vật phát triển mạnh, cây ra hoa kết trái quanh năm --&gt; sản xuất nhiều vụ, cơ cấu cây trồng vật nuôi đa dạng (cận đới, cận nhiệt đới, ôn đới); sản xuất lớn theo hưởng chuyên canh và đa canh. Nhiều loại nông sản có giá trị cao - Công nghiệp: Nông nghiệp phát triển mạnh dẫn đến cung cấp nguyên liệu cho công nghiệp chế biến</li>
+<li>Dịch vụ: Khí hậu tạo ra nhiều tài nghuyên du lịch tự nhiên (hang động, bờ biển đẹp,..). Giúp các loại hình giao thông vận tải hoạt động quanh năm (đường bộ, đường sắt,..)<br>
+Khó khăn</li>
+<li>Khí hậu nước ta là môi trường nhiệt đới gió mùa ẩm nên không chỉ làm cây cối phát triển mà còn có nhiều loại dịch bệnh (củm,…), thiên tai (lũ lụt, rửa trôi,..), sâu bệnh phát triển --&gt; cản trở các hoạt động kinh tế, xã hội - Khí hậu nhiệt đới gió mùa ẩm làm cho các máy móc và phương tiện giao thông nhanh bị<br>
+hao mòn, ẩm hóc,<br>
+Chúc bạn học tốt!</li>
+</ul>
+
+</body>
+
+</html>
